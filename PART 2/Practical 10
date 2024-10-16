@@ -1,0 +1,30 @@
+package java_projects;
+import java.util.*;
+public class Prac10 {
+    public static String sortstr(String input_str) {
+char[] temp = input_str.toCharArray();
+Arrays.sort(temp);
+
+return new String(temp);
+
+}
+
+public static void main(String[] args) {
+String s = new String("Java is OOP Language");
+String a = s.toLowerCase();
+System.out.println("Original String: "+s);
+System.out.println("Lower case String:"+a);
+System.out.println("Uppercase String: "+s.toUpperCase());
+StringBuffer sb = new StringBuffer(s);
+sb.reverse();
+String rev = sb.toString();
+System.out.println("Reversed String:"+rev);
+
+String ip = "FEELSFOR";
+String op = sortstr(ip);
+
+System.out.println("Input String:"+ip);
+System.out.println("Output String:"+op);
+
+
+}}
