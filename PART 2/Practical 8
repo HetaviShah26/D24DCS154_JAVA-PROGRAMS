@@ -1,0 +1,22 @@
+package java_projects;
+package str;
+
+public class Prac8 {
+    
+    public static int arrc(int[] arr) {
+int count = 0 ;
+for(int i : arr) {
+if (i == 9) {
+count++;
+}
+}
+return count;
+}
+    
+public static void main(String[] args) {
+System.out.println("count of 9 in : {1,2,3,4,5,6,7,8,9,9,9} is : " + arrc(new int[] {1,2,3,4,5,6,7,8,9,9,9}));
+System.out.println("count of 9 in :{90,99,87,2,9} is : "+ arrc(new int[] {90,99,87,2,9}));
+
+}
+
+}
