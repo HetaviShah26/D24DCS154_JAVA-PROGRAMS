@@ -1,0 +1,69 @@
+EMPLOY FILE :
+package java_projects;
+
+public class Employ {
+     private String fname;
+    private String lname;
+    private Double salary;
+
+    public Employ(String fname, String lname, Double salary) {
+        this.fname = fname;
+        this.lname = lname;
+        setSalary(salary);  // Ensure salary validation is applied.
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Double salary) {
+        if (salary <= 0) {
+            this.salary = 0.0;
+        } else {
+            this.salary = salary;
+        }
+    }
+
+    public double getAnnualIncome() {
+        return salary * 12;
+    }
+
+    public void raise(double percent) {
+        salary += salary * (percent / 100);
+    }
+}
+EMPLOYEE MAIN FILE:
+package java_projects;
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employ employee1 = new Employ("John", "Doe", 3000.00);
+        Employ employee2 = new Employ("Jane", "Smith", 2500.00);
+
+        System.out.println("Yearly Salary of " + employee1.getFname() + " " + employee1.getLname() + ": " + employee1.getAnnualIncome());
+        System.out.println("Yearly Salary of " + employee2.getFname() + " " + employee2.getLname() + ": " + employee2.getAnnualIncome());
+
+        // Giving each employee a 10% raise
+        employee1.raise(10.0);
+        employee2.raise(10.0);
+
+        System.out.println("Yearly Salary of " + employee1.getFname() + " " + employee1.getLname() + " after 10% raise: " + employee1.getAnnualIncome());
+        System.out.println("Yearly Salary of " + employee2.getFname() + " " + employee2.getLname() + " after 10% raise: " + employee2.getAnnualIncome());
+    }
+}
