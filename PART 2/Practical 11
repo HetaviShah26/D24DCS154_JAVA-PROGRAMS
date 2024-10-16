@@ -1,0 +1,14 @@
+package java_projects;
+public class Prac11 {
+    public static void main(String[] args) {
+String s = new String("CHARUSAT UNIVERSITY");
+
+System.out.println("The original String:"+s);
+System.out.println("Length Of The String:"+s.length());
+String a = s.toLowerCase();
+System.out.println("The lower cased String:"+a);
+String s2 = s.replace('H', 'D');
+System.out.println("Replacing H with First Letter Of My Name:"+s2);
+}
+
+}
