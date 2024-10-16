@@ -1,0 +1,50 @@
+package java_projects;
+import java.util.Scanner;
+
+public class ElectricapplianceShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of items: ");
+        int numberOfItems = scanner.nextInt();
+ 
+        int[] productCodes = new int[numberOfItems];
+        double[] prices = new double[numberOfItems];
+ 
+        for (int i = 0; i < numberOfItems; i++) {
+            System.out.print("Enter product code for item " + (i + 1) + ": ");
+            productCodes[i] = scanner.nextInt();
+            System.out.print("Enter price for item " + (i + 1) + ": ");
+            prices[i] = scanner.nextDouble();
+        }
+ 
+        double totalBill = 0.0;
+ 
+        for (int i = 0; i < numberOfItems; i++) {
+            double taxRate = 0.0;
+            switch (productCodes[i]) {
+                case 1:
+                    taxRate = 0.08; // 8% for motor
+                    break;
+                case 2:
+                    taxRate = 0.12; // 12% for fan
+                    break;
+                case 3:
+                    taxRate = 0.05; // 5% for tube light
+                    break;
+                case 4:
+                    taxRate = 0.075; // 7.5% for wires
+                    break;
+                default:
+                    taxRate = 0.03; // 3% for all other items
+                    break;
+            }
+            double taxAmount = prices[i] * taxRate;
+            double itemTotal = prices[i] + taxAmount;
+            totalBill += itemTotal;
+        }
+ 
+        System.out.printf("Total bill amount: $%.2f\n", totalBill);
+ 
+        scanner.close();
+    }
+}
