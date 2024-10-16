@@ -1,0 +1,27 @@
+package java_projects;
+import java.util.Scanner;
+
+public class Exercise {
+ 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of days for your exercise routine: ");
+        int n = scanner.nextInt();
+        if (n <= 0) {
+            System.out.println("The number of days must be a positive integer.");
+            return;
+        }
+        int firstTerm = 0;
+        int secondTerm = 1;
+
+        System.out.println("Exercise routine (Fibonacci series):");
+        for (int i = 1; i <= n; i++) {
+            System.out.println("Day " + i + ": " + firstTerm + " minutes");
+            int nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+        secondTerm = nextTerm;
+        }
+
+        scanner.close();
+    }
+}
