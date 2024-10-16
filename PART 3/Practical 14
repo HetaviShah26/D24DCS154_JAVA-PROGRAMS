@@ -1,0 +1,58 @@
+DATE FILE :
+package part3;
+
+public class Date {
+private int day;
+private int month;
+private int year;
+public Date(int day , int month , int year) {
+this.day = day;
+this.month = month;
+this.year = year;
+
+}
+public int get_day() {
+return day;
+}
+public void set_day(int day) {
+this.day = day;
+}
+public int get_month() {
+return month;
+}
+public void set_month(int month) {
+this.month = month;
+}
+public int get_year() {
+return year;
+}
+public void set_year(int year) {
+this.year = year;
+}
+public void display(){
+System.out.println("Date: " +day +"/"+month+"/"+year);
+
+}
+}
+
+DATE_TEST FILE:
+package java_projects;
+
+public class Date_Test {
+    public static void main(String[] args) {
+Date d = new Date(26 , 01 , 2006);
+System.out.println("Date is " + d.get_day());
+System.out.println("Month is: " +d.get_month());
+System.out.println("Year is: " +d.get_year());
+d.display();
+d.set_day(01);
+d.set_month(02);
+d.set_year(2001);
+System.out.println("Date is " + d.get_day());
+System.out.println("Month is: " +d.get_month());
+System.out.println("Year is: " +d.get_year());
+d.display();
+
+}
+}
+}
