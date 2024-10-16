@@ -1,0 +1,29 @@
+package java_projects;
+import java.util.*;
+
+public class Prac40 {
+    
+    public static void main(String[] args) {
+            String text = "This is a sample String. This String have many words. Words are counted from this String.";
+            System.out.println("String: " +text);
+            // Convert the text to lowercase and split it into words, removing punctuation
+            String[] words = text.toLowerCase().replaceAll("[^a-zA-Z ]", "").split("\\s+");
+
+            // Create a TreeMap to store words and their occurrences in alphabetical order
+            Map<String, Integer> wordCountMap = new TreeMap<>();
+
+            // Count occurrences of each word
+            for (String word : words) {
+                if (!word.isEmpty()) {
+                    wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+                }
+            }
+
+            // Display words and their occurrences in alphabetical order
+            System.out.println("Word Occurrences:");
+            for (Map.Entry<String, Integer> entry : wordCountMap.entrySet())
+            {
+                System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+        }
+}
